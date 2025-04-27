@@ -30,7 +30,7 @@ jobs:
         [Desktop Entry]
         Name=Syncthing
         GenericName=File synchronization
-        Comment=Starts the main syncthing process in the background.
+        Comment=Starts syncthing
         Exec=syncthing
         Icon=syncthing
         Terminal=false
@@ -45,7 +45,8 @@ jobs:
         #!/bin/bash
         HERE="$(dirname "$(readlink -f "${0}")")"
 
-        ./"$HERE"/usr/bin/syncthing
+        cd /"$HERE"/usr/bin/
+        ./syncthing
         EOF
 
         #curl --location -o syncthing.AppDir/AppRun https://github.com/AppImage/AppImageKit/releases/download/continuous/AppRun-x86_64
