@@ -41,11 +41,11 @@ jobs:
 
         chmod +x syncthing.AppDir/syncthing.desktop
 
-        cat > syncthing.AppDir/syncthing.desktop << 'EOF'
+        cat > syncthing.AppDir/AppRun << 'EOF'
         #!/bin/bash
         HERE="$(dirname "$(readlink -f "${0}")")"
 
-        ./"$HERE"//usr/bin/syncthing
+        ./"$HERE"/usr/bin/syncthing
         EOF
 
         #curl --location -o syncthing.AppDir/AppRun https://github.com/AppImage/AppImageKit/releases/download/continuous/AppRun-x86_64
