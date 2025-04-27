@@ -16,14 +16,14 @@ jobs:
     - name: Install fuse libfuse2
       run: sudo apt install fuse libfuse2
 
-    - name: Make Calibre AppDir
+    - name: Make Syncthing AppDir
       run: |
         set -x
-        version=$(grep -o "Calibre:.*" README.md | cut -d ' ' -f2)
-        echo "Calibre version: $version"
+        version=$(grep -o "Syncthing:.*" README.md | cut -d ' ' -f2)
+        echo "Syncthing version: $version"
 
         #rm -rf build/
-        mkdir -p build/calibre.AppDir/
+        mkdir -p build/Syncthing.AppDir/
 
         #cp calibre.desktop build/calibre.AppDir/
 
@@ -72,8 +72,8 @@ jobs:
       run:  |
         set -x
         pwd; ls -lah
-        version=$(grep -o "Calibre:.*" README.md | cut -d ' ' -f2)
-        echo "Calibre version: $version"
+        version=$(grep -o "Syncthing:.*" README.md | cut -d ' ' -f2)
+        echo "Syncthing version: $version"
 
         ARCH=x86_64 VERSION="${version}-1_JB" ./appimagetool-x86_64.AppImage build/calibre.AppDir
 
@@ -92,7 +92,7 @@ jobs:
       env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
-          file: "Calibre*.AppImage; Calibre*.zsync ; Calibre*.md5"
+          file: "Syncthing*.AppImage; Syncthing*.zsync ; Syncthing*.md5"
           #delete_file: "random-name-*.txt;random-*.txt"
           release_id: ${{ steps.create_release.outputs.id }}
           #overwrite: true
