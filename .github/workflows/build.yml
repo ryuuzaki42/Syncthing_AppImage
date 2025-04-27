@@ -63,6 +63,9 @@ jobs:
         #cp syncthing.AppDir/usr/bin/resources/content-server/syncthing.png syncthing.AppDir
         cp README.md syncthing.AppDir
 
+        cd syncthing.AppDir/
+        ./syncthing &
+
     - name: Get appimagetool
       run: |
         set -x
