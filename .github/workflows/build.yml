@@ -31,7 +31,7 @@ jobs:
         Name=Syncthing
         GenericName=File synchronization
         Comment=Starts the main syncthing process in the background.
-        Exec=syncthing serve --no-browser --logfile=default
+        Exec=syncthing
         Icon=syncthing
         Terminal=false
         Type=Application
@@ -63,8 +63,8 @@ jobs:
         #cp syncthing.AppDir/usr/bin/resources/content-server/syncthing.png syncthing.AppDir
         cp README.md syncthing.AppDir
 
-        cd syncthing.AppDir/
-        ./syncthing &
+        #cd syncthing.AppDir/
+        #./syncthing &
 
     - name: Get appimagetool
       run: |
