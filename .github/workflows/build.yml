@@ -100,4 +100,4 @@ jobs:
           verbose: true
           #tags: true
           draft: false
-          default_release_name: "Calibre V in AppImage"
+          default_release_name: "Syncthing V in AppImage"
