@@ -76,9 +76,9 @@ jobs:
         version=$(grep -o "Syncthing:.*" README.md | cut -d ' ' -f2)
         echo "Syncthing version: $version"
 
-        ARCH=x86_64 VERSION="${version}-1_JB" ./appimagetool-x86_64.AppImage build/calibre.AppDir
+        ARCH=x86_64 VERSION="${version}-1_JB" ./appimagetool-x86_64.AppImage build/syncthing.AppDir
 
-        fileName=$(ls Calibre*.AppImage)
+        fileName=$(ls syncthing*.AppImage)
         echo "fileName: $fileName"
 
         md5sum "$fileName" > "${fileName}.md5"
