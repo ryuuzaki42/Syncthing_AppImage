@@ -1,12 +1,9 @@
 
-# Calibre_AppImage
-https://calibre-ebook.com/
+# Syncthing_AppImage
+https://syncthing.net/
 
-## Repository: https://github.com/ryuuzaki42/Calibre_AppImage
-    Calibre: 8.3.0
-
----
-Based on: https://github.com/KushagraKarira/calibre-appimage
+## Repository: https://github.com/ryuuzaki42/Syncthing_AppImage
+    Calibre: 1.2.0
 
 ---
-https://calibre-ebook.com/download_linux
+https://github.com/syncthing/syncthing/releases/latest
