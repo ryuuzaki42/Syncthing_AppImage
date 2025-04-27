@@ -28,13 +28,15 @@ jobs:
 
         cat > build/syncthing.AppDir/syncthing.desktop << 'EOF'
         [Desktop Entry]
-        Type=Application
-        Name=Syncthing
-        Comment=E-Book Management
-        Exec=syncthing %F
+        Name=Start Syncthing
+        GenericName=File synchronization
+        Comment=Starts the main syncthing process in the background.
+        Exec=syncthing serve --no-browser --logfile=default
         Icon=syncthing
-        MimeType=application/x-mobipocket-ebook;application/epub+zip;x-content/ebook-reader
-        Categories=Office;Graphics;Viewer
+        Terminal=false
+        Type=Application
+        Keywords=synchronization;daemon;
+        Categories=Network;FileTransfer;P2P
         EOF
 
         chmod +x build/syncthing.AppDir/syncthing.desktop
