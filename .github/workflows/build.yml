@@ -50,7 +50,6 @@ jobs:
         wget https://github.com/syncthing/syncthing/releases/download/v$version/syncthing-linux-amd64-v$version.tar.gz
         tar -xvf syncthing-linux-amd64-v$version.tar.gz
         rm syncthing-linux-amd64-v$version.tar.gz
-
         mv syncthing-linux-amd64-v$version/ bin/
 
         pwd
@@ -60,11 +59,7 @@ jobs:
         ls -lah
 
         wget https://github.com/syncthing/syncthing/blob/main/assets/logo-128.png -O syncthing.AppDir/syncthing.png
-        #cp syncthing.AppDir/usr/bin/resources/content-server/syncthing.png syncthing.AppDir
         cp README.md syncthing.AppDir
-
-        #cd syncthing.AppDir/
-        #./syncthing &
 
     - name: Get appimagetool
       run: |
