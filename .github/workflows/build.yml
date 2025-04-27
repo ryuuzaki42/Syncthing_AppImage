@@ -44,12 +44,14 @@ jobs:
         curl --location -o syncthing.AppDir/AppRun https://github.com/AppImage/AppImageKit/releases/download/continuous/AppRun-x86_64
         chmod +x syncthing.AppDir/AppRun
 
-        mkdir -p syncthing.AppDir/usr/bin/
-        cd syncthing.AppDir/usr/bin/
+        mkdir -p syncthing.AppDir/usr/
+        cd syncthing.AppDir/usr/
 
         wget https://github.com/syncthing/syncthing/releases/download/v$version/syncthing-linux-amd64-v$version.tar.gz
         tar -xvf syncthing-linux-amd64-v$version.tar.gz
         rm syncthing-linux-amd64-v$version.tar.gz
+
+        mv syncthing-linux-amd64-v$version/ bin/
 
         pwd
         ls -lah
