@@ -47,11 +47,13 @@ jobs:
         mkdir -p syncthing.AppDir/usr/bin/
         cd syncthing.AppDir/usr/bin/
 
-        curl -o - https://github.com/syncthing/syncthing/releases/download/v$version/syncthing-linux-amd64-v$version.tar.gz  | tar -xvf -
+        wget https://github.com/syncthing/syncthing/releases/download/v$version/syncthing-linux-amd64-v$version.tar.gz
+        tar -xvf syncthing-linux-amd64-v$version.tar.gz
+        rm syncthing-linux-amd64-v$version.tar.gz
 
         pwd
         ls -lah
-        cd ../../../../
+        cd ../../../
         pwd
         ls -lah
 
