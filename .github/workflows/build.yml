@@ -41,8 +41,8 @@ jobs:
 
         chmod +x syncthing.AppDir/syncthing.desktop
 
-        curl --location -o syncthing.AppDir/AppRun https://github.com/AppImage/AppImageKit/releases/download/continuous/AppRun-x86_64
-        chmod +x syncthing.AppDir/AppRun
+        #curl --location -o syncthing.AppDir/AppRun https://github.com/AppImage/AppImageKit/releases/download/continuous/AppRun-x86_64
+        #chmod +x syncthing.AppDir/AppRun
 
         mkdir -p syncthing.AppDir/usr/
         cd syncthing.AppDir/usr/
