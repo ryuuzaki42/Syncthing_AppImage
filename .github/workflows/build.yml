@@ -22,7 +22,6 @@ jobs:
         version=$(grep -o "Syncthing:.*" README.md | cut -d ' ' -f2)
         echo "Syncthing version: $version"
 
-        #rm -rf build/
         mkdir -p build/syncthing.AppDir/
 
         #cp syncthing.desktop build/syncthing.AppDir/
@@ -54,15 +53,14 @@ jobs:
         pwd
         ls -lah
 
-        cp build/syncthing.AppDir/usr/bin/resources/content-server/syncthing.png build/syncthing.AppDir
+        wget https://github.com/syncthing/syncthing/blob/main/assets/logo-128.png -O build/syncthing.AppDir/syncthing.png
+        #cp build/syncthing.AppDir/usr/bin/resources/content-server/syncthing.png build/syncthing.AppDir
         cp README.md build/syncthing.AppDir
 
     - name: Get appimagetool
       run: |
         set -x
-        #wget -q https://github.com/AppImage/AppImageKit/releases/download/13/appimagetool-x86_64.AppImage
         #wget -q https://github.com/AppImage/AppImageKit/releases/download/continuous/appimagetool-x86_64.AppImage
-
         version_go_appimage=$(wget -q -O - https://api.github.com/repos/probonopd/go-appimage/releases | grep "\"name.*appimagetool-.*-x86_64.AppImage\"" | head -n 1 | cut -d '-' -f2)
         echo "version_go_appimage: $version_go_appimage"
 
