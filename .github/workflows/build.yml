@@ -28,7 +28,7 @@ jobs:
 
         cat > build/syncthing.AppDir/syncthing.desktop << 'EOF'
         [Desktop Entry]
-        Name=Start Syncthing
+        Name=Syncthing
         GenericName=File synchronization
         Comment=Starts the main syncthing process in the background.
         Exec=syncthing serve --no-browser --logfile=default
@@ -78,7 +78,7 @@ jobs:
 
         ARCH=x86_64 VERSION="${version}-1_JB" ./appimagetool-x86_64.AppImage build/syncthing.AppDir
 
-        fileName=$(ls syncthing*.AppImage)
+        fileName=$(ls Syncthing*.AppImage)
         echo "fileName: $fileName"
 
         md5sum "$fileName" > "${fileName}.md5"
