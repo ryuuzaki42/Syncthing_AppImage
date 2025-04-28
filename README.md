@@ -3,7 +3,7 @@
 https://syncthing.net/
 
 ## Repository: https://github.com/ryuuzaki42/Syncthing_AppImage
-    Syncthing: 1.25.0
+    Syncthing: 1.29.0
 
 ---
 https://syncthing.net/downloads/
