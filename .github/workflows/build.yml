@@ -45,8 +45,10 @@ jobs:
         #!/bin/bash
         HERE="$(dirname "$(readlink -f "${0}")")"
 
+        all_Parameters=$@
+
         cd /"$HERE"/usr/bin/
-        ./syncthing
+        ./syncthing $all_Parameters
         EOF
 
         #curl --location -o syncthing.AppDir/AppRun https://github.com/AppImage/AppImageKit/releases/download/continuous/AppRun-x86_64
