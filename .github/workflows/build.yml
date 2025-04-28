@@ -48,8 +48,9 @@ jobs:
         all_Parameters=$@
 
         cd /"$HERE"/usr/bin/
-        echo "Running syncthing $all_Parameters"
+        echo -e "\nRunning: ./syncthing $all_Parameters $all_Parameters\n"
         ./syncthing $all_Parameters
+        echo
         EOF
 
         #curl --location -o syncthing.AppDir/AppRun https://github.com/AppImage/AppImageKit/releases/download/continuous/AppRun-x86_64
