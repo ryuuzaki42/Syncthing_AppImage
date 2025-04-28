@@ -89,8 +89,9 @@ jobs:
         pwd; ls -lah
         version=$(grep -o "Syncthing:.*" README.md | cut -d ' ' -f2)
         echo "Syncthing version: $version"
+        tag_Version=2
 
-        ARCH=x86_64 VERSION="${version}-1_JB" ./appimagetool-x86_64.AppImage syncthing.AppDir
+        ARCH=x86_64 VERSION="${version}-${tag_Version}_JB" ./appimagetool-x86_64.AppImage syncthing.AppDir
 
         fileName=$(ls Syncthing*.AppImage)
         echo "fileName: $fileName"
