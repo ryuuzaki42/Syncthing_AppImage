@@ -48,6 +48,7 @@ jobs:
         all_Parameters=$@
 
         cd /"$HERE"/usr/bin/
+        echo "Running syncthing $all_Parameters"
         ./syncthing $all_Parameters
         EOF
 
