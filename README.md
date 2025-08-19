@@ -3,7 +3,7 @@
 https://syncthing.net/
 
 ## Repository: https://github.com/ryuuzaki42/Syncthing_AppImage
-    Syncthing: 2.0.0
+    Syncthing: 2.0.2
 
 ## Usage
 ```
