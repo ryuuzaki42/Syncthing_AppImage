@@ -1,9 +1,12 @@
 
 # Syncthing_AppImage
+
+Syncthing is a continuous file synchronization program. It synchronizes files between two or more computers.
+
 https://syncthing.net/
 
 ## Repository: https://github.com/ryuuzaki42/Syncthing_AppImage
-    Syncthing: 2.0.13
+    Syncthing: 2.0.14
 
 ## Usage
 ```
