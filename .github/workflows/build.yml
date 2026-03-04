@@ -58,6 +58,7 @@ jobs:
         rm syncthing-linux-amd64-v$version.tar.gz
 
         cp syncthing-linux-amd64-v$version/etc/linux-desktop/syncthing-ui.desktop ../syncthing.desktop
+        sed -i "s/Name=.*/Name=Syncthing/" ../syncthing.desktop
         mv syncthing-linux-amd64-v$version/ bin/
 
         pwd; ls -lah
