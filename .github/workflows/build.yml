@@ -24,10 +24,7 @@ jobs:
 
         mkdir -p syncthing.AppDir/
 
-        #cp syncthing.desktop syncthing.AppDir/
-
-        cat > syncthing.AppDir/syncthing.desktop << 'EOF'
-        [Desktop Entry]
+        echo'[Desktop Entry]
         Name=Syncthing
         GenericName=File synchronization
         Comment=Starts syncthing
@@ -36,9 +33,7 @@ jobs:
         Terminal=false
         Type=Application
         Keywords=synchronization;daemon;
-        Categories=Network;FileTransfer;P2P
-        EOF
-
+        Categories=Network;FileTransfer;P2P' > syncthing.AppDir/syncthing.desktop
         chmod +x syncthing.AppDir/syncthing.desktop
 
         cat > syncthing.AppDir/AppRun << 'EOF'
@@ -64,11 +59,9 @@ jobs:
         rm syncthing-linux-amd64-v$version.tar.gz
         mv syncthing-linux-amd64-v$version/ bin/
 
-        pwd
-        ls -lah
+        pwd; ls -lah
         cd ../../
-        pwd
-        ls -lah
+        pwd; ls -lah
 
         wget https://github.com/syncthing/syncthing/blob/main/assets/logo-128.png -O syncthing.AppDir/syncthing.png
         cp README.md syncthing.AppDir
@@ -95,7 +88,6 @@ jobs:
 
         fileName=$(ls Syncthing*.AppImage)
         echo "fileName: $fileName"
-
         md5sum "$fileName" > "${fileName}.md5"
         pwd; ls -lah
 
