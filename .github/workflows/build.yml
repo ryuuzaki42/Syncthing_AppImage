@@ -25,24 +25,11 @@ jobs:
         mkdir syncthing.AppDir/
         cd syncthing.AppDir/
 
-        #echo '[Desktop Entry]
-        #Name=Syncthing
-        #GenericName=File synchronization
-        #Comment=Starts syncthing
-        #Exec=syncthing
-        #Icon=syncthing
-        #Terminal=false
-        #Type=Application
-        #Keywords=synchronization;daemon;
-        #Categories=Network;FileTransfer;P2P' > syncthing.desktop
-        #chmod +x syncthing.desktop
-
         cat > AppRun << EOF
         #!/bin/bash
         HERE="$(dirname "$(readlink -f "${0}")")"
 
         all_Parameters=$@
-
         cd /"$HERE"/usr/bin/
         echo -e "\nRunning: ./syncthing $all_Parameters $all_Parameters\n"
         ./syncthing $all_Parameters
@@ -59,13 +46,14 @@ jobs:
 
         cp syncthing-linux-amd64-v$version/etc/linux-desktop/syncthing-ui.desktop ../syncthing.desktop
         sed -i "s/Name=.*/Name=Syncthing/" ../syncthing.desktop
+
         mv syncthing-linux-amd64-v$version/ bin/
 
         pwd; ls -lah
         cd ../../
-        pwd; ls -lah
 
-        wget https://github.com/syncthing/syncthing/blob/main/assets/logo-128.png -O syncthing.AppDir/syncthing.png
+        #wget https://github.com/syncthing/syncthing/blob/main/assets/logo-128.png -O syncthing.AppDir/syncthing.png
+        wget https://github.com/syncthing/syncthing/blob/main/assets/logo-only.svg -O syncthing.AppDir/syncthing.svg
         cp README.md syncthing.AppDir/
 
     - name: Get appimagetool
