@@ -17,13 +17,11 @@ https://syncthing.net/
      ./Syncthing-*_JB-x86_64.AppImage serve --no-browser --logfile=default
 
 # Opens Syncthing's Web UI in the default browser (Syncthing must already be started):
-     ./Syncthing-*_JB-x86_64.AppImage --browser-only
+     ./Syncthing-*_JB-x86_64.AppImage browser
 
 # For help:
     ./Syncthing-*_JB-x86_64.AppImage -h
 ```
 
 ---
-https://syncthing.net/downloads/
-
 https://github.com/syncthing/syncthing/releases/latest
