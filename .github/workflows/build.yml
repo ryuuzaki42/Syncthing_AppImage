@@ -24,7 +24,7 @@ jobs:
 
         mkdir -p syncthing.AppDir/
 
-        echo'[Desktop Entry]
+        echo '[Desktop Entry]
         Name=Syncthing
         GenericName=File synchronization
         Comment=Starts syncthing
@@ -36,7 +36,7 @@ jobs:
         Categories=Network;FileTransfer;P2P' > syncthing.AppDir/syncthing.desktop
         chmod +x syncthing.AppDir/syncthing.desktop
 
-        cat > syncthing.AppDir/AppRun << 'EOF'
+        cat > syncthing.AppDir/AppRun << EOF
         #!/bin/bash
         HERE="$(dirname "$(readlink -f "${0}")")"
 
@@ -47,8 +47,6 @@ jobs:
         ./syncthing $all_Parameters
         echo
         EOF
-
-        #curl --location -o syncthing.AppDir/AppRun https://github.com/AppImage/AppImageKit/releases/download/continuous/AppRun-x86_64
         chmod +x syncthing.AppDir/AppRun
 
         mkdir -p syncthing.AppDir/usr/
