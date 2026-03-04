@@ -22,21 +22,22 @@ jobs:
         version=$(grep -o "Syncthing:.*" README.md | cut -d ' ' -f2)
         echo "Syncthing version: $version"
 
-        mkdir -p syncthing.AppDir/
+        mkdir syncthing.AppDir/
+        cd syncthing.AppDir/
 
-        echo '[Desktop Entry]
-        Name=Syncthing
-        GenericName=File synchronization
-        Comment=Starts syncthing
-        Exec=syncthing
-        Icon=syncthing
-        Terminal=false
-        Type=Application
-        Keywords=synchronization;daemon;
-        Categories=Network;FileTransfer;P2P' > syncthing.AppDir/syncthing.desktop
-        chmod +x syncthing.AppDir/syncthing.desktop
+        #echo '[Desktop Entry]
+        #Name=Syncthing
+        #GenericName=File synchronization
+        #Comment=Starts syncthing
+        #Exec=syncthing
+        #Icon=syncthing
+        #Terminal=false
+        #Type=Application
+        #Keywords=synchronization;daemon;
+        #Categories=Network;FileTransfer;P2P' > syncthing.desktop
+        #chmod +x syncthing.desktop
 
-        cat > syncthing.AppDir/AppRun << EOF
+        cat > AppRun << EOF
         #!/bin/bash
         HERE="$(dirname "$(readlink -f "${0}")")"
 
@@ -47,14 +48,16 @@ jobs:
         ./syncthing $all_Parameters
         echo
         EOF
-        chmod +x syncthing.AppDir/AppRun
+        chmod +x AppRun
 
-        mkdir -p syncthing.AppDir/usr/
-        cd syncthing.AppDir/usr/
+        mkdir usr/
+        cd usr/
 
         wget https://github.com/syncthing/syncthing/releases/download/v$version/syncthing-linux-amd64-v$version.tar.gz
         tar -xvf syncthing-linux-amd64-v$version.tar.gz
         rm syncthing-linux-amd64-v$version.tar.gz
+
+        cp syncthing-linux-amd64-v$version/etc/linux-desktop/syncthing-ui.desktop ../syncthing.desktop
         mv syncthing-linux-amd64-v$version/ bin/
 
         pwd; ls -lah
@@ -62,7 +65,7 @@ jobs:
         pwd; ls -lah
 
         wget https://github.com/syncthing/syncthing/blob/main/assets/logo-128.png -O syncthing.AppDir/syncthing.png
-        cp README.md syncthing.AppDir
+        cp README.md syncthing.AppDir/
 
     - name: Get appimagetool
       run: |
@@ -88,10 +91,6 @@ jobs:
         echo "fileName: $fileName"
         md5sum "$fileName" > "${fileName}.md5"
         pwd; ls -lah
-
-    # Build - Errror: Resource not accessible by integration
-    # Change Settings -> Actions -> General -> Workflow Permissions to allow read and write:
-    # https://github.com/actions/first-interaction/issues/10#issuecomment-1506118886
 
     # https://github.com/marketplace/actions/upload-to-github-release
     - uses: xresloader/upload-to-github-release@main
