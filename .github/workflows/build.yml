@@ -31,7 +31,7 @@ jobs:
         all_Parameters=$@
         cd /"$HERE"/usr/bin/
 
-        echo -e "\nRunning: ./syncthing $all_Parameters $all_Parameters\n"
+        echo -e "\nRunning: ./syncthing $all_Parameters\n"
         ./syncthing $all_Parameters
         echo' > AppRun
         chmod +x AppRun
