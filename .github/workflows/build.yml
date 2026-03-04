@@ -25,16 +25,15 @@ jobs:
         mkdir syncthing.AppDir/
         cd syncthing.AppDir/
 
-        cat > AppRun << EOF
-        #!/bin/bash
+        echo '#!/bin/bash
         HERE="$(dirname "$(readlink -f "${0}")")"
 
         all_Parameters=$@
         cd /"$HERE"/usr/bin/
+
         echo -e "\nRunning: ./syncthing $all_Parameters $all_Parameters\n"
         ./syncthing $all_Parameters
-        echo
-        EOF
+        echo' > AppRun
         chmod +x AppRun
 
         mkdir usr/
@@ -67,9 +66,8 @@ jobs:
         chmod +x appimagetool-x86_64.AppImage
 
     - name: Make AppImage
-      run:  |
+      run: |
         set -x
-        pwd; ls -lah
         version=$(grep -o "Syncthing:.*" README.md | cut -d ' ' -f2)
         echo "Syncthing version: $version"
         tag_Version=1
