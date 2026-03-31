@@ -1,7 +1,7 @@
 
 # Syncthing_AppImage
 
-Syncthing is a continuous file synchronization program. It synchronizes files between two or more computers.
+Syncthing is a continuous file synchronization program. It synchronizes files between two or more computers
 
 https://syncthing.net/
 
@@ -22,6 +22,5 @@ https://syncthing.net/
 # For help:
     ./Syncthing-*_JB-x86_64.AppImage -h
 ```
-
 ---
 https://github.com/syncthing/syncthing/releases/latest
