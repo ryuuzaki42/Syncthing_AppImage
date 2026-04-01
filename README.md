@@ -10,16 +10,16 @@ https://syncthing.net/
 
 ## Usage
 ```
-# Base - default:
+# Base
      ./Syncthing-*_JB-x86_64.AppImage
 
-# Starts the main syncthing process in the background:
+# Starts the main syncthing process in the background
      ./Syncthing-*_JB-x86_64.AppImage serve --no-browser --logfile=default
 
-# Opens Syncthing's Web UI in the default browser (Syncthing must already be started):
+# Opens Syncthing's Web UI in the default browser - Syncthing must already be started
      ./Syncthing-*_JB-x86_64.AppImage browser
 
-# For help:
+# Help
     ./Syncthing-*_JB-x86_64.AppImage -h
 ```
 ---
