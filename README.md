@@ -6,18 +6,18 @@ Syncthing is a continuous file synchronization program. It synchronizes files be
 https://syncthing.net/
 
 ## Repository: https://github.com/ryuuzaki42/Syncthing_AppImage
-    Syncthing: 2.0.15
+    Syncthing: 2.0.16
 
 ## Usage
 ```
 # Base
-     ./Syncthing-*_JB-x86_64.AppImage
+    ./Syncthing-*_JB-x86_64.AppImage
 
 # Starts the main syncthing process in the background
-     ./Syncthing-*_JB-x86_64.AppImage serve --no-browser --logfile=default
+    ./Syncthing-*_JB-x86_64.AppImage serve --no-browser --logfile=default
 
 # Opens Syncthing's Web UI in the default browser - Syncthing must already be started
-     ./Syncthing-*_JB-x86_64.AppImage browser
+    ./Syncthing-*_JB-x86_64.AppImage browser
 
 # Help
     ./Syncthing-*_JB-x86_64.AppImage -h
