@@ -6,7 +6,7 @@ Syncthing is a continuous file synchronization program. It synchronizes files be
 https://syncthing.net/
 
 ## Repository: https://github.com/ryuuzaki42/Syncthing_AppImage
-    Syncthing: 2.0.16
+    Syncthing: 2.1.0
 
 ## Usage
 ```
